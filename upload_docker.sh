@@ -5,7 +5,7 @@
 
 # Step 1:
 # Create dockerpath
-# dockerpath=<your docker ID/path>
+dockerpath=nabisco83/devops-training-machine-learning:completed
 
 # Step 2:  
 # Authenticate & tag
@@ -13,3 +13,5 @@ echo "Docker ID and Image: $dockerpath"
 
 # Step 3:
 # Push image to a docker repository
+docker tag python/udacity-projects:latest $dockerpath
+docker push $dockerpath
