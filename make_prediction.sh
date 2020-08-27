@@ -1,5 +1,12 @@
 #!/usr/bin/env bash
 
+if [ "$1" != "" ]; then
+   IPADDR=$1
+else
+   IPADDR="localhost"
+fi
+
+echo "IPAddress: $IPADDR"
 PORT=80
 echo "Port: $PORT"
 
@@ -25,4 +32,4 @@ curl -d '{
    }
 }'\
      -H "Content-Type: application/json" \
-     -X POST http://localhost:$PORT/predict
+     -X POST http://$IPADDR:$PORT/predict
